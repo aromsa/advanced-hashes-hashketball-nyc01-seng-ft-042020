@@ -231,7 +231,7 @@ def winning_team
   game_hash.each do |location, info|
     info[:players].each do |element|
       if element[:points] > points
-         points = element[:points]
+         points += element[:points]
          team = info[:team_name]
       end
     end
