@@ -246,7 +246,7 @@ def player_with_longest_name
     info[:players].each do |element|
       if element[:player_name].length > name_length
         name_length = element[:player_name].length
-        player = info[:player_name]
+        player = element[:player_name]
       end
     end
   end
@@ -260,7 +260,7 @@ def long_name_steals_a_ton?
     info[:players].each do |element|
       if element[:steals] > steals
          steals = element[:steals]
-         if player_with_longest_name == steals
+         if element[:player_name] == player_with_longest_name
            bool = true
          end
       end
